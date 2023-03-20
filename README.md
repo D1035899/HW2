@@ -17,59 +17,101 @@
 - [作業2 前端效能調校-當機等候網頁](#作業2-前端效能調校-當機等候網頁)
   - [目錄](#目錄)
   - [網頁效能測試](#網頁效能測試)
-    - [調校前的分數](#調校前的分數)
-    - [調校後的分數](#調校後的分數)
-    - [設計當機網頁的想法](#設計當機網頁的想法)
-  - [Code 講解](#code-講解)
-    - [HTML](#html)
-    - [CSS](#css)
-    - [JavaScript](#javascript)
+    - [調校前的分數 : 350](#調校前的分數--350)
+    - [調校後的分數 : 400(滿分)](#調校後的分數--400滿分)
+  - [效能調校講解](#效能調校講解)
+    - [Performance](#performance)
+    - [Accessibility](#accessibility)
+    - [Best Practices](#best-practices)
+    - [SEO](#seo)
   - [心得](#心得)
 
 ---
 
 ## 網頁效能測試
 
-### 調校前的分數
+### 調校前的分數 : 350
 
-![Before](images/before.png)
+![Before](images/demo_pic/before.png)
 
-### 調校後的分數
+### 調校後的分數 : 400(滿分)
 
-![After](images/after.png)
-
-### 設計當機網頁的想法
-
-- 需要讓使用者了解目前網頁無法處理用戶需求，也就是網頁當機
-- 直覺的導引按鈕
-- 搭配文字及圖片來點綴網頁
-- 使用轉動的魔術方塊來讓網頁更加符合其風格
+![After](images/demo_pic/after.png)
 
 ---
 
-## Code 講解
+## 效能調校講解
 
 - 只放上有修改的部分code
 
-> code的介紹皆由註解來解釋
+### Performance
 
-### HTML
+![Performance1](images/demo_pic/performance1.png)
+![Performance2](images/demo_pic/performance2.png)
 
 ```html
+<!-- 修改前的code -->
+<div>
+  <img id = 'rubik_cube' src="images/rubik's_cube.gif" alt="a rubik's cube spinning">
+</div>
+----------------------------------------------------------------------------------------
 
+<!-- 修改後的code -->
+<div>
+  <video  id = 'rubik_cube' loop autoplay muted width="500" height="500">
+    <source src="images\rubik_s_cube.webm" type = "video/webm" />
+    </video>
+</div>
 ```
 
-### CSS
+- 透過將 rubik's_cube 的檔案格式從 gif 變為 webM 來降低檔案的大小，如此就不會影響網頁的載入
+  - [調整工具點此](https://convertio.co/zh/gif-webm/)
+- 使用`<video>`將影片設定其屬性以及大小:
+  - loop: 循環播放
+  - autoplay: 網頁載入好就自動撥放影片
+  - muted:將影片靜音(chrome只允許muted的影片自動撥放)
+- 將 code 裡的所有圖片都增加 width 和 height屬性來調整圖片大小
 
-```css
+### Accessibility
 
+![Accessibility](images/demo_pic/accessibility.png)
+
+- 透過改變按鈕的顏色來讓字體和按鈕的背景更加顯眼
+- 改變前
+  - 預設按鈕
+  ![default 1](images/demo_pic/default_button1.png)
+  - 游標覆蓋至按鈕區域時
+  ![hover 1](images/demo_pic/hover_button1.png)
+  - 點擊按鈕時
+  ![click 1](images/demo_pic/click_button1.png)
+- 改變後
+  - 預設按鈕
+  ![default 2](images/demo_pic/default_button2.png)
+  - 游標覆蓋至按鈕區域時
+  ![hover 2](images/demo_pic/hover_button2.png)
+  - 點擊按鈕時
+  ![click 2](images/demo_pic/click_button2.png)
+
+### Best Practices
+
+![Best Practices](images/demo_pic/best_practices.png)
+
+- 透過網路上的線上轉檔工具將我所使用的 icon 的解析度大小都調整成96 x 96
+  - [調整工具網頁點此](https://www.iloveimg.com/resize-image)
+
+### SEO
+
+![SEO](images/demo_pic/seo.png)
+
+```html
+<meta name="description"
+      content="Author: Chang-Mu-Xiang,
+               Student ID: D1035899,
+               Department: IECS,
+               Web-programming HW2">
 ```
 
-### JavaScript
-
-```js
-
-```
+在`<head>`裡加入敘述，該敘述並不會出現在自己的網頁中，但是在使用搜尋引擎搜尋該網頁時，就會出現此敘述，幫助使用者了解資訊
 
 ---
 
