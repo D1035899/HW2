@@ -79,17 +79,28 @@
 - 透過改變按鈕的顏色來讓字體和按鈕的背景更加顯眼
 - 改變前
   - 預設按鈕
+
   ![default 1](images/demo_pic/default_button1.png)
+
   - 游標覆蓋至按鈕區域時
+
   ![hover 1](images/demo_pic/hover_button1.png)
+
   - 點擊按鈕時
+
   ![click 1](images/demo_pic/click_button1.png)
+
 - 改變後
   - 預設按鈕
+
   ![default 2](images/demo_pic/default_button2.png)
+
   - 游標覆蓋至按鈕區域時
+
   ![hover 2](images/demo_pic/hover_button2.png)
+
   - 點擊按鈕時
+
   ![click 2](images/demo_pic/click_button2.png)
 
 ### Best Practices
